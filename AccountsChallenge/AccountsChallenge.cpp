@@ -5,6 +5,18 @@
 using namespace std;
 
 int main() {
+   
+    vector<Account*> accounts;
+    accounts.push_back(new Savings_Account{ "Kenny", 5000, 0.5 });
+    accounts.push_back(new Checking_Account{ "Dave", 69000000 });
+    accounts.push_back(new Trust_Account{ "Neil", 4200, 0.1 });
+
+    display(accounts);
+    deposit(accounts, 9000);
+    withdraw(accounts, 12345);
+    
+    
+    
     //cout.precision(2);
     //cout << fixed;
 
