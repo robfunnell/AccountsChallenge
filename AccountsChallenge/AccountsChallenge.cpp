@@ -9,9 +9,6 @@ int main() {
     cout << fixed;
 
     //Accounts
-    vector<Account> accounts;
-    accounts.push_back(Account{"Kenny", 5000});
-    accounts.push_back(Account{"Larry", 10000});
 
     vector<Savings_Account> savings_accounts;
     savings_accounts.push_back(Savings_Account{"Kenny", 5000, 0.8 });
@@ -24,11 +21,6 @@ int main() {
     vector<Trust_Account> trust_accounts;
     trust_accounts.push_back(Trust_Account{ "Kenny", 5000, 0.8 });
     trust_accounts.push_back(Trust_Account{ "Larry", 10000, 0.5 });
-
-
-    display(accounts);
-    deposit(accounts, 1000);
-    withdraw(accounts, 2000);
 
     display(savings_accounts);
     deposit(savings_accounts, 1000);

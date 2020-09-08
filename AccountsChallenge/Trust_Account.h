@@ -22,8 +22,9 @@ protected:
 public:
 
     Trust_Account(std::string name = def_name, double balance = def_balance, double int_rate = def_int_rate);
-    bool deposit(double amount);
-    bool withdraw(double amount);
+    virtual bool deposit(double amount) override;
+    virtual bool withdraw(double amount) override;
+    virtual ~Trust_Account() = default;
 
 
     
