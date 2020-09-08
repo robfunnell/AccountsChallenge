@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Savings_Account.h"
+#include "Checking_Account.h"
 #include "Account_Util.h"
 
 using namespace std;
@@ -9,30 +10,32 @@ int main() {
     cout.precision(2);
     cout << fixed;
 
-    // Accounts
+    //Accounts
     vector<Account> accounts;
-    accounts.push_back(Account{});
-    accounts.push_back(Account{ "Larry" });
-    accounts.push_back(Account{ "Moe", 2000 });
-    accounts.push_back(Account{ "Curly", 5000 });
+    accounts.push_back(Account{"Kenny", 5000});
+    accounts.push_back(Account{"Larry", 10000});
+
+    vector<Savings_Account> savings_accounts;
+    savings_accounts.push_back(Savings_Account{"Kenny", 5000, 0.8 });
+    savings_accounts.push_back(Savings_Account{"Larry", 10000, 0.5 });
+
+    vector<Checking_Account> checking_accounts;
+    checking_accounts.push_back(Checking_Account{"Kenny", 5000 });
+    checking_accounts.push_back(Checking_Account{"Larry", 10000 });
+
 
     display(accounts);
     deposit(accounts, 1000);
     withdraw(accounts, 2000);
 
-    // Savings 
+    display(savings_accounts);
+    deposit(savings_accounts, 1000);
+    withdraw(savings_accounts, 2000);
 
-    vector<Savings_Account> sav_accounts;
-    sav_accounts.push_back(Savings_Account{});
-    sav_accounts.push_back(Savings_Account{ "Superman" });
-    sav_accounts.push_back(Savings_Account{ "Batman", 2000 });
-    sav_accounts.push_back(Savings_Account{ "Wonderwoman", 5000, 5.0 });
-
-    display(sav_accounts);
-    deposit(sav_accounts, 1000);
-    withdraw(sav_accounts, 2000);
-
-
+    display(checking_accounts);
+    deposit(checking_accounts, 1000);
+    withdraw(checking_accounts, 2000);
+    
     return 0;
 }
 
