@@ -5,7 +5,6 @@
 class Checking_Account :
     public Account
 {
-    friend std::ostream& operator<<(std::ostream& os, const Checking_Account& account);
 
 private:
     
@@ -22,5 +21,7 @@ public:
     virtual bool withdraw(double amount) override;
     virtual bool deposit(double amount);
     virtual ~Checking_Account() = default;
+
+    virtual void print(std::ostream& os) const override;
 };
 

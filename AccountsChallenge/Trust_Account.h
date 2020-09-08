@@ -3,7 +3,6 @@
 class Trust_Account :
     public Savings_Account
 {
-    friend std::ostream& operator<<(std::ostream& os, const Trust_Account& account);
 
 private:
 
@@ -25,6 +24,7 @@ public:
     virtual bool deposit(double amount) override;
     virtual bool withdraw(double amount) override;
     virtual ~Trust_Account() = default;
+    virtual void print(std::ostream& os) const override;
 
 
     
